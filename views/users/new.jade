@@ -1,0 +1,10 @@
+extends ../layouts/default
+
+append body
+  .container
+    h1 Add New User
+    .form.new-user
+      form(action="/users", method="POST")
+        +input("text","first_name","First Name","First Name", "first_name")
+        +input("text","last_name","Lat Name","Last Name", "last_name")
+        +submit("Create User")

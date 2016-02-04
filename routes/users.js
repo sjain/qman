@@ -3,6 +3,8 @@ var users = require('../app/controllers/users');
 var router = express.Router();
 
 router.get('/', users.list);
+router.get('/new', users.new);
+router.post('/', users.create);
 router.put('/:id', users.update);
 
 module.exports = router;

@@ -22,7 +22,7 @@
     "express-session": "latest",
     "gzippo": "latest",
     "jade": "latest",
-    "jade-bootstrap": "*",
+    "jade-bootstrap": "https://github.com/rajasegar/JADE-Bootstrap",
     "method-override": "latest",
     "mongoose": "latest",
     "morgan": "~1.5.1",
