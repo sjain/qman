@@ -1,6 +1,6 @@
 var express = require('express');
 var session = require('express-session');
-var mongoStore = require('connect-mongo')(session);
+var mongoStore = require('connect-mongo/es5')(session);
 var flash = require('connect-flash');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
