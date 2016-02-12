@@ -1,3 +1,5 @@
 node_modules
 npm-debug.log
 data
+public/css/styles.css
+public/js/client_spa.js
