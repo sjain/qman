@@ -104,6 +104,8 @@ gulp.task('nodemon', function (cb) {
     script: './bin/www',
     watch:  [
       'app.js',
+      'app/',
+      'routes/'
     ],
     ext: 'html js json',
     port: 3000,
