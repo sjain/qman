@@ -29,5 +29,10 @@
     "serve-favicon": "~2.2.0",
     "socket.io": "~0.9.14",
     "underscore": "latest"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.0.6"
   }
 }
