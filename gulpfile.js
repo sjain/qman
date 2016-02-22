@@ -7,7 +7,6 @@ var jshint = require('gulp-jshint');
 var sass   = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
-//var browserify = require('gulp-browserify');
 var browserify = require('browserify');
 var gutil = require('gulp-util');
 var source = require('vinyl-source-stream');
@@ -125,10 +124,12 @@ gulp.task('nodemon', function (cb) {
 });
 
 gulp.task('develop', ['nodemon', 'styles', 'scripts:watch'], function() {
-  browserSync.init({
+  browserSync.init(null, {
+    // TODO sub-URL sync is not working
     proxy: 'http://localhost:3000',
     port: 3001,
     browser: ["google chrome"],
+    logLevel: 'debug',
     //files: ["public/**/*.*", "app/**/*"],
   }, function(err, bs) {
     if(err) {
