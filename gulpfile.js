@@ -104,9 +104,10 @@ gulp.task('nodemon', function (cb) {
     watch:  [
       'app.js',
       'app/',
-      'routes/'
+      'routes/',
+      'views/'
     ],
-    ext: 'html js json',
+    ext: 'html js json jade',
     port: 3000,
     nodeArgs: ['--debug'],
   }).on('start', function () {
