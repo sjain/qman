@@ -1,8 +1,5 @@
 extends /layouts/default
 
-append styles
-	link(href='/css/styles.css', rel='stylesheet')
-
 append body
 	.container
 		h1= title
@@ -26,10 +23,3 @@ append body
 				+nav_header Nav header
 				+nav_item("#") Separated link
 				+nav_item("#") One more separated link
-
-block scripts
-	//script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
-	//script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
-	script(src="js/jquery.min.js")
-	script(src="js/bootstrap.min.js")
-	script(src="js/client_spa.js")

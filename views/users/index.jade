@@ -1,16 +1,7 @@
-extends ../../node_modules/jade-bootstrap/layouts/starter
-
-append styles
-	link(href='/css/styles.css', rel='stylesheet')
+extends /layouts/default
 
 append body
 	.container
 		each user, i in users
 			.user
 				#{i+1} #{user.last_name} #{user.first_name}
-
-
-block scripts
-	script(src="js/jquery.min.js")
-	script(src="js/bootstrap.min.js")
-	script(src="js/client_spa.js")
