@@ -131,6 +131,7 @@ gulp.task('develop', ['nodemon', 'styles', 'scripts:watch'], function() {
     port: 3001,
     browser: ["google chrome"],
     logLevel: 'debug',
+    ghostMode: false,
     //files: ["public/**/*.*", "app/**/*"],
   }, function(err, bs) {
     if(err) {
