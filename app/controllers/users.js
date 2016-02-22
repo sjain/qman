@@ -3,7 +3,7 @@ var User = mongoose.model('User');
 
 exports.list = function (req, res) {
   User.find({}, function (err, users) {
-    res.json(users);
+    res.render('users/index', { users: users });
   });
 };
 
