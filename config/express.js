@@ -30,8 +30,8 @@ module.exports = function (app, config) {
 
   // set views path, template engine and default layout
   app.set('views', path.join(config.root, 'views'));
-  //app.set('views', config.root + '/app/views')
   app.set('view engine', 'jade');
+  app.locals.basedir = path.join(config.root, 'views');
 
   app.use(cookieParser());
   //app.use(bodyParser.json());
