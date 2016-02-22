@@ -1,0 +1,25 @@
+Physician/Specialist Consultation & Blood Report Screening
+
+  Day-1 Queues
+    Diagnostic Blood Screening
+    EKG
+    Carotid
+    Bone Density Check
+
+  Specialists: (Day-2)
+    Blood Pressure Check-up
+    Primary Care Physicians
+    Cardiologist
+    Ophthalmologist
+    Chiropractors
+    Physical Therapist
+    Speech & Audio
+    Dermatologist
+    Gynecologist
+    Allergist
+    Dentist
+    Orthopedic
+    Gastroenterologist
+    Hearing Tests
+
+  Visit Information Booth: Pharmacist, Nutrition , Dietician, Acupressure and Sujok therapy
