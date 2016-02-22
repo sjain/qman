@@ -1,10 +1,22 @@
 extends ../layouts/default
 
+mixin bs_input(model, property, type, label)
+  if model.errors !== undefined && model.errors[property]
+    .form-group.has-error
+      label(for="#{property}") #{label}
+      input.form-control(type="#{type}",id="#{property}",placeholder="#{label}",name="#{property}",value="#{model[property]}")
+      .help-block #{model.errors[property].message}
+  else
+    .form-group
+      label(for="#{property}") #{label}
+      input.form-control(type="#{type}",id="#{property}",placeholder="#{label}",name="#{property}",value="#{model[property]}")
+
 append body
   .container
     h1 Add New User
     .form.new-user
       form(action="/users", method="POST")
-        +input("text","first_name","First Name","First Name", "first_name")
-        +input("text","last_name","Last Name","Last Name", "last_name")
+        +bs_input(user, 'first_name', 'text', "First Name")
+        +bs_input(user, 'last_name', 'text', "Last Name")
+        +bs_input(user, 'email', 'text', "Email")
         +submit("Create User")

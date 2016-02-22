@@ -21,6 +21,10 @@ exports.new = function(req, res) {
 exports.create = function (req, res) {
   var user = new User(req.body);
   user.save(function (err) {
-    res.redirect('/users');
+    if(err) {
+      res.render('users/new', { user: user });
+    } else {
+      res.redirect('/users');
+    }
   });
 };
