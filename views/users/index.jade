@@ -2,7 +2,8 @@ extends /layouts/default
 
 append body
 	.container
-		each user, i in users
-			.user
-				#{i+1} #{user.last_name} #{user.first_name}
+		ul
+			each user, i in users
+				li.user
+					a(href="/users/#{user.id}") #{user.first_name} #{user.last_name}
 		a.btn.btn-primary.btn-lg(href='/users/new') New User

@@ -7,10 +7,24 @@ exports.list = function (req, res) {
   });
 };
 
+exports.edit = function(req, res) {
+  var user = User.findOne({_id: req.params.id}, function(err, user) {
+    res.render('users/new', { user: user });
+  });
+}
+
 exports.update = function (req, res) {
-  var user = new User(req.body);
-  User.update({_id: user.id}, {first_name: user.first_name}, function (err, numberAffected, raw) {
-    res.redirect('/users');
+  User.findOne({_id: req.params.id}, function (err, user){
+    user.first_name = req.body.first_name;
+    user.last_name = req.body.last_name;
+    user.email = req.body.email;
+    user.save(function (err) {
+      if(err) {
+        res.render('users/new', { user: user });
+      } else {
+        res.redirect('/users');
+      }
+    });
   });
 };
 

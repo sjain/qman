@@ -11,10 +11,13 @@ mixin bs_input(model, property, type, label)
 
 append body
   .container
-    h1 Add New User
+    h1 #{user.isNew ? 'Add New User' : 'Edit User'}
+    - var postURL = user.isNew ? '/users' : "/users/" + user.id;
     .form.new-user
-      form(action="/users", method="POST")
+      form(action="#{postURL}", method="POST")
+        unless user.isNew
+          input(type="hidden",name="id", value="#{user._id}")
         +bs_input(user, 'first_name', 'text', "First Name")
         +bs_input(user, 'last_name', 'text', "Last Name")
         +bs_input(user, 'email', 'text', "Email")
-        +submit("Create User")
+        +submit(user.isNew ? "Create User" : 'Update User')
