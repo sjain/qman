@@ -1,0 +1,21 @@
+extends ../layouts/default
+
+mixin bs_input(model, property, type, label)
+  - var propertyHasErrors = model.errors !== undefined && model.errors[property]
+  - var optionalFormGroupClasses = propertyHasErrors ? 'has-error' : ''
+  .form-group(class="#{optionalFormGroupClasses}")
+    label(for="#{property}") #{label}
+    input.form-control(type="#{type}",id="#{property}",placeholder="#{label}",name="#{property}",value="#{model[property] || ''}")
+    if propertyHasErrors
+      .help-block #{model.errors[property].message}
+
+append body
+  .container
+    h1 #{queue.isNew ? 'Add New Queue' : 'Edit Queue'}
+    - var postURL = queue.isNew ? '/queues' : "/queues/" + queue.id;
+    .form.new-queue
+      form(action="#{postURL}", method="POST")
+        unless queue.isNew
+          input(type="hidden",name="id", value="#{queue._id}")
+        +bs_input(queue, 'name', 'text', "Name")
+        +submit(queue.isNew ? "Create Queue" : 'Update Queue')

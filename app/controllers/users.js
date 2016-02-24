@@ -8,7 +8,7 @@ exports.list = function (req, res) {
 };
 
 exports.edit = function(req, res) {
-  var user = User.findOne({_id: req.params.id}, function(err, user) {
+  User.findOne({_id: req.params.id}, function(err, user) {
     res.render('users/new', { user: user });
   });
 }

@@ -50,6 +50,7 @@ module.exports = function (app, config) {
   // Route Handlers
   app.use('/', require(config.root + '/routes/index'));
   app.use('/users', require(config.root + '/routes/users'));
+  app.use('/queues', require(config.root + '/routes/queues'));
 
   // Error handlers
   app.use(function(req, res, next) {

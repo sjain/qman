@@ -1,0 +1,9 @@
+extends /layouts/default
+
+append body
+	.container
+		ul
+			each user, i in queues
+				li.user
+					a(href="/queues/#{user.id}") #{user.name}
+		a.btn.btn-primary.btn-lg(href='/queues/new') New Queue
