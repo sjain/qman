@@ -23,3 +23,6 @@ Physician/Specialist Consultation & Blood Report Screening
     Hearing Tests
 
   Visit Information Booth: Pharmacist, Nutrition , Dietician, Acupressure and Sujok therapy
+
+
+Rails dashboard: https://github.com/gottfrois/dashing-rails
