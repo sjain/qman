@@ -7,6 +7,7 @@ Queue Manager
 $ npm install
 $ mkdir -i data/db
 $ mongod --dbpath data/db
-$ npm start
+# Start server and launch browser on port 3001 with browserSync configured
+$ gulp
 ```
 
