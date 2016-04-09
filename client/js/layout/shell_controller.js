@@ -12,7 +12,7 @@
     loadData();
 
     function loadData() {
-      vm.hello = "Hello from shell controller";
+      vm.hello = "Hello from ShellController";
     }
 
   }

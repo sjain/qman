@@ -5,6 +5,6 @@
     //'qman.widgets',
     //'qman.core',
     'qman.layout'
-  ])
+  ]);
 
 })();
