@@ -30,6 +30,9 @@ var config = function () {
     scssFiles: [
       scssDir + '/**/*.scss',
     ],
+    clientHtmlFiles: [
+      jsDir + '/**/*.html'
+    ],
     destDir: './public/',
     bundleJsFile: 'client_spa.js',
   };
@@ -97,6 +100,13 @@ gulp.task('styles', function() {
     .pipe(browserSync.stream());
 });
 
+gulp.task('client:html', function() {
+  return gulp.src(config.clientHtmlFiles)
+    .pipe(gulp.dest(config.destDir + '/views'))
+    .pipe(browserSync.stream());
+});
+
+
 gulp.task('nodemon', function (cb) {
   var started = false;
   return nodemon({
@@ -140,6 +150,7 @@ gulp.task('develop', ['nodemon', 'styles', 'scripts:watch'], function() {
   });
   gulp.watch(config.jsFiles, ['jshint']);
   gulp.watch(config.scssFiles, ['styles']);
+  gulp.watch(config.clientHtmlFiles, ['client:html']);
 });
 
 gulp.task('default', ['develop'], function () {
