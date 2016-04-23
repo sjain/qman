@@ -2,10 +2,26 @@ var mongoose = require('mongoose');
 var User = mongoose.model('User');
 
 exports.list = function (req, res) {
-  User.find({}, function (err, users) {
-    res.render('users/index', { users: users });
+  res.format({
+    html: function() {
+      User.find({}, function (err, users) {
+        res.render('users/index', { users: users });
+      });
+    },
   });
 };
+
+exports.json = function(req, res) {
+  res.format({
+    json: function () {
+      console.log('rendering application/json');
+      User.find({}, function(err, users) {
+        console.log('users:', users);
+        res.json(users);
+      });
+    },
+  });
+}
 
 exports.edit = function(req, res) {
   User.findOne({_id: req.params.id}, function(err, user) {

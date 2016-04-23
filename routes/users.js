@@ -3,6 +3,7 @@ var users = require('../app/controllers/users');
 var router = express.Router();
 
 router.get('/', users.list);
+router.get('/json', users.json);
 router.get('/new', users.new);
 router.post('/', users.create);
 router.get('/:id', users.edit);
