@@ -17,7 +17,6 @@ var UserSchema = new Schema({
 });
 
 UserSchema.path('email').validate(function (email) {
-  console.log('email:', email);
   var emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
   return emailRegex.test(email);
 }, 'Please enter a valid email address.')

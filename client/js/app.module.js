@@ -1,3 +1,5 @@
+require('./layout/layout.module');
+
 (function () {
   'use strict';
 

@@ -14,9 +14,7 @@ exports.list = function (req, res) {
 exports.json = function(req, res) {
   res.format({
     json: function () {
-      console.log('rendering application/json');
       User.find({}, function(err, users) {
-        console.log('users:', users);
         res.json(users);
       });
     },
